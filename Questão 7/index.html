@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img class="robbie" src="https://pm1.aminoapps.com/6662/a374c8a470385089a41d26fe4b4045cba1628953_00.jpg" alt="">
+    <p class="resposta"></p>
+
+    <script>
+
+        let respostaRobbie = document.querySelector(".resposta")
+        let robbie = document.querySelector(".robbie")
+
+        robbie.onmouseenter = mouseEnter;
+        robbie.ondrag = mouseDrag;
+        robbie.onmouseleave = mouseLeave;
+
+        robbie.addEventListener('click', () => {
+            respostaRobbie.innerText = "\"Eu não sou o seu bonitinho mãe!!!!!\""
+        })
+
+        function mouseEnter() {
+            respostaRobbie.innerText = "\"Eu disse que não era para entrar mãe!!!\""
+        }
+
+        function mouseDrag() {
+            respostaRobbie.innerText = "\"Eu não quero abraço mãe!!\""
+        }
+
+        function mouseLeave() {
+            respostaRobbie.innerText = "\"Fecha a porta mãe!\""
+        }
+
+        respostaRobbie.style.fontSize = "30px";
+    </script>
+
+</body>
+
+</html>
