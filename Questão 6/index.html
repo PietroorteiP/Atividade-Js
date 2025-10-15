@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 style="display: flex; justify-content: center;">Crie o título de uma história</h1>
+    <button style="display: flex; margin: 0 auto;" class="gerador"> Clique para criar</button>
+    <h1 style="display: flex; justify-content: center;" class="nome"></h1>
+    <script>
+
+        let botaoGerador = document.querySelector(".gerador")
+        let nomeGerado = document.querySelector(".nome")
+
+        let titulos = ["Sr.", "Srta.", "Mister", "Lady", "Coronel", "Dom"]
+        let nomes = ["Danforth", "Gedney", "Thorfinnssen", "Whilhelm", "George", "Margaret"]
+        let classes = ["Agente Pinkerton", "Investigador", "Artíficie", "Cultista", "Assassino", "Guerreiro"]
+        let locais = ["Christchurch", "McMurdo", "Rhode Islands", "Fleur-de-Lys", " R'lyeh", "Yahar'gul"]
+
+        botaoGerador.addEventListener('click', ()=>{
+            let titulo = titulos[Math.floor(Math.random() * 6)]
+            let nome = nomes[Math.floor(Math.random() * 6)]
+            let classe = classes[Math.floor(Math.random() * 6)]
+            let local = locais[Math.floor(Math.random() * 6)]
+
+            nomeGerado.innerText = (titulo) + " " + (nome) + ", " + " o " + (classe) + " de " + (local)
+            nomeGerado.style.color = "rgb(1,96,70)";
+        })
+
+    </script>
+
+</body>
+</html>
