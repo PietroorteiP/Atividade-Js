@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .tema-escuro{
+            background-color: rgb(51, 49, 49);
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <input class="sabor" type="text">
+    <button class="alternarTema">Alternar Tema</button>
+    <p class="resposta"></p>
+
+    <script>
+
+        let body = document.querySelector("body")
+        let botaoTema = document.querySelector(".alternarTema")
+        let saborSorvete = document.querySelector(".sabor")
+        let verificador = document.querySelector(".resposta")
+        let tema = localStorage.getItem("tema")
+
+
+        saborSorvete.addEventListener('input', () => {
+            if(saborSorvete.value.length > 3){
+                if (saborSorvete.value.toLowerCase() == "chocolate"){
+                    verificador.innerText = "Eu amo sorvete de chocolate!"
+                } else if (saborSorvete.value.toLowerCase() == "flocos"){
+                    verificador.innerText = "Ahh, mas chocolate é o meu favorito..."
+                } else {
+                    verificador.innerText = "Ahh, eu esperava um sabor de sorvete..."
+                }
+            }
+        })
+
+        if(tema == 'tema-escuro'){
+            body.classList.add('tema-escuro')
+        }
+
+        botaoTema.addEventListener('click', ()=>{ 
+            body.classList.toggle('tema-escuro')
+        
+            let isTemaEscuro = body.classList.contains("tema-escuro")
+        
+
+            if(isTemaEscuro){
+                localStorage.setItem("tema", "tema-escuro")
+            } else {
+                localStorage.setItem("tema", "")
+            }
+        })
+
+    </script>
+
+</body>
+</html>
